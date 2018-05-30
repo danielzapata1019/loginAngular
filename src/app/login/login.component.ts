@@ -23,6 +23,12 @@ export class LoginComponent implements OnInit {
   constructor(private loginService:LoginService, private router:Router) { }
 
   ngOnInit() {
+    let user:any;
+    user= localStorage.getItem('user');
+    if(user != undefined){
+      this.router.navigate(['main']);
+
+    }
   }
 
   login(): void {
